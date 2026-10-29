@@ -1,5 +1,7 @@
 import { ArrowRight, Check, Copy } from "lucide-react";
 import { mount } from "../mount.jsx";
+import JsonLd from "../components/JsonLd.jsx";
+import { innerPage } from "../seo.js";
 import PageHero from "../components/PageHero.jsx";
 import ChatPhone, { PunchCard } from "../components/ChatPhone.jsx";
 import { ScreenshotPhone } from "../components/AppScreens.jsx";
@@ -12,9 +14,10 @@ import Cta from "../sections/Cta.jsx";
 import { SIGNUP_URL, whatsappAssurances, whatsappSteps } from "../data.js";
 import "./pages.css";
 
-function WhatsAppPage() {
+export default function WhatsAppPage() {
   return (
     <>
+      <JsonLd data={innerPage("/whatsapp/", "WhatsApp HR")} />
       <PageHero
         eyebrow={<span className="hero-pill plain">WhatsApp-first HR</span>}
         segments={[{ text: "HR updates your team will" }, { text: "actually open.", className: "grad-text" }]}
@@ -98,4 +101,4 @@ function WhatsAppPage() {
   );
 }
 
-mount("whatsapp", WhatsAppPage);
+if (!import.meta.env.SSR) mount("whatsapp", WhatsAppPage);

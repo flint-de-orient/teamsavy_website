@@ -1,21 +1,23 @@
 import { mount } from "../mount.jsx";
 import PageHero from "../components/PageHero.jsx";
+import JsonLd from "../components/JsonLd.jsx";
 import { legalNav, SUPPORT_EMAIL } from "../data.js";
-import { docs, EFFECTIVE_DATE } from "../legal.jsx";
+import { docs } from "../legal.jsx";
+import { innerPage } from "../seo.js";
 import "./pages.css";
 
 // privacy-policy.html, terms-of-service.html and data-deletion.html all load
 // this entry; <body data-doc> says which document to show.
-const docId = document.body.dataset.doc;
-const doc = docs[docId];
-
-function LegalPage() {
+export default function LegalPage({ docId }) {
+  const doc = docs[docId];
+  const path = legalNav.find((l) => l.id === docId).href;
   return (
     <>
+      <JsonLd data={innerPage(path, doc.title)} />
       <PageHero
         eyebrow={<span className="hero-pill plain">Legal</span>}
         title={doc.title}
-        lede={`Effective date: ${EFFECTIVE_DATE}`}
+        lede={`Effective date: ${doc.effective}`}
       />
       <section className="section">
         <div className="container legal-grid">
@@ -36,4 +38,7 @@ function LegalPage() {
   );
 }
 
-mount("legal", LegalPage);
+if (!import.meta.env.SSR) {
+  const docId = document.body.dataset.doc;
+  mount("legal", () => <LegalPage docId={docId} />);
+}

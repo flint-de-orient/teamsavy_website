@@ -1,5 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import { mount } from "../mount.jsx";
+import JsonLd from "../components/JsonLd.jsx";
+import { faqPage, innerPage } from "../seo.js";
 import PageHero from "../components/PageHero.jsx";
 import { mocks } from "../components/Mocks.jsx";
 import { PayslipScreen } from "../components/AppScreens.jsx";
@@ -7,8 +9,9 @@ import TiltIn from "../motion/TiltIn.jsx";
 import Magnetic from "../motion/Magnetic.jsx";
 import Compliance from "../sections/Compliance.jsx";
 import FeatureCards from "../sections/FeatureCards.jsx";
+import Faq from "../sections/Faq.jsx";
 import Cta from "../sections/Cta.jsx";
-import { moneyOut, SIGNUP_URL } from "../data.js";
+import { moneyOut, payrollFaqs, SIGNUP_URL } from "../data.js";
 import "./pages.css";
 
 const PayrollMock = mocks.payroll;
@@ -51,9 +54,10 @@ function TaxMock() {
   );
 }
 
-function PayrollPage() {
+export default function PayrollPage() {
   return (
     <>
+      <JsonLd data={innerPage("/payroll/", "Payroll software", faqPage(payrollFaqs))} />
       <PageHero
         eyebrow={<span className="hero-pill plain">Payroll &amp; compliance</span>}
         segments={[{ text: "Indian payroll, with the" }, { text: "return files ready.", className: "grad-text" }]}
@@ -136,9 +140,10 @@ function PayrollPage() {
       </section>
 
       <FeatureCards eyebrow="Money out" title="From payroll run to bank account" items={moneyOut} columns={4} alt />
+      <Faq items={payrollFaqs} title="Payroll software questions" id="payroll-faq" />
       <Cta />
     </>
   );
 }
 
-mount("payroll", PayrollPage);
+if (!import.meta.env.SSR) mount("payroll", PayrollPage);

@@ -1,0 +1,40 @@
+# TeamSavy
+
+> TeamSavy is AI-powered HR management software for Indian businesses. It covers recruitment, appointment letters, onboarding, attendance, leave, payroll with PF, ESI, Professional Tax and TDS, expenses, tasks and KPIs, and delivers payslips, approvals and office orders to employees on WhatsApp. It runs in the browser at https://app.teamsavy.com and as an Android app on Google Play.
+
+TeamSavy is a product of Flint De Orient Marketing & Technology Pvt. Ltd., India. Tagline: "Smarter HR. Stronger Teams." Support: support@teamsavy.com.
+
+## Key facts
+
+- AI features (Google Gemini): reads résumés into job applications; scores each candidate against a job's qualification, experience and industry requirements with a reason; generates MCQ questions for online screening exams; reads Aadhaar, PAN, bank statements and qualification certificates into the employee record; drafts circulars, notices and office orders from a short topic using the company's details and leave policy; suggests employee ID card designs. People review and decide; the AI fills in and suggests.
+- Recruitment: an application link per job, WhatsApp number verification for candidates, online MCQ exams scored automatically, interview panels with a scorecard per interviewer, physical and medical fitness rounds, round results on WhatsApp.
+- Appointment letters: built from the company's pay bands and standard clauses, approved before sending, delivered on WhatsApp with Download and Accept buttons; unaccepted offers expire automatically.
+- Onboarding: new joiners upload documents; details are extracted automatically; employee ID cards are generated from the company's design.
+- Attendance: biometric, face-recognition and NFC card devices through eTimeOffice; selfie punch in the Android app or a phone browser, matched against an enrolment photo and checked against office geofences; shifts, grace periods, late deductions and regularization requests; WhatsApp alerts for on time, late, early departure and absence.
+- Leave: earned, casual, sick, maternity, paternity and bereavement leave, compensatory off and leave without pay; manager-to-HR approval routing; live balances; certificates attached to applications; leave encashment; decisions on WhatsApp with a link to the leave policy.
+- Payroll (India): PF (ECR file), ESI (contribution file), Professional Tax by state slabs, TDS with Form 24Q; old vs new tax regime comparison per employee and self-service tax declarations; bank transfer files in the bank's template; gratuity ledger; payslips on WhatsApp and in the app with PDF download.
+- Expenses: claims with bills, full or partial approval, payouts through Cashfree.
+- Also: tasks with due-date reminders, KPI scores, notices, circulars and office orders, shifts and locations.
+- WhatsApp: messages are pre-approved WhatsApp Business templates sent one-to-one through Meta's WhatsApp Business Platform, never to group chats. Employees can sign in with a one-time code on WhatsApp.
+- Roles: owners and admins, HR, managers and employees each get their own view.
+- Mobile: Android app "Teamsavy – HR Management" on Google Play (https://play.google.com/store/apps/details?id=com.teamsavy.teamsavy). On iPhone, the web app works in Safari.
+- Data: the customer organisation controls its employee and candidate data; TeamSavy processes it on the organisation's behalf, keeps each company's data separate and does not sell personal information.
+
+## Pages
+
+- [Home](https://teamsavy.com/): overview of TeamSavy HR management software
+- [Features](https://teamsavy.com/features/): hiring, appointment letters, onboarding, attendance, leave and payroll in detail
+- [AI HR software](https://teamsavy.com/ai-hr-software/): every AI feature and how it is used
+- [Attendance management software](https://teamsavy.com/attendance-management-software/): devices, selfie punch, geofencing, shifts
+- [Leave management software](https://teamsavy.com/leave-management-software/): leave types, approval routing, encashment
+- [Recruitment software](https://teamsavy.com/recruitment-software/): AI résumé screening, MCQ exams, interview panels, offers
+- [Payroll software](https://teamsavy.com/payroll/): PF, ESI, PT, TDS, Form 24Q, tax regimes, bank files
+- [WhatsApp HR](https://teamsavy.com/whatsapp/): every message TeamSavy sends on WhatsApp
+- [Mobile app](https://teamsavy.com/mobile-app/): the Android app for employees, managers and HR
+- [Contact](https://teamsavy.com/contact/): sales and support, frequently asked questions
+
+## Legal
+
+- [Privacy Policy](https://teamsavy.com/privacy-policy.html)
+- [Terms of Service](https://teamsavy.com/terms-of-service.html)
+- [Data Deletion](https://teamsavy.com/data-deletion.html)

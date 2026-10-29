@@ -1,4 +1,4 @@
-import { COMPANY, legalNav, LOGIN_URL, nav, SIGNUP_URL, SUPPORT_EMAIL } from "../data.js";
+import { COMPANY, legalNav, LOGIN_URL, nav, SIGNUP_URL, solutionsNav, SUPPORT_EMAIL } from "../data.js";
 import PlayBadge from "./PlayBadge.jsx";
 import "./Footer.css";
 
@@ -17,12 +17,23 @@ export default function Footer() {
             <h2>Product</h2>
             <ul>
               {nav
-                .filter((n) => n.id !== "contact")
+                .filter((n) => n.id !== "contact" && n.id !== "ai")
                 .map((n) => (
                   <li key={n.id}>
                     <a href={n.href}>{n.label}</a>
                   </li>
                 ))}
+            </ul>
+          </nav>
+
+          <nav aria-label="Solutions">
+            <h2>Solutions</h2>
+            <ul>
+              {solutionsNav.map((s) => (
+                <li key={s.id}>
+                  <a href={s.href}>{s.label}</a>
+                </li>
+              ))}
             </ul>
           </nav>
 

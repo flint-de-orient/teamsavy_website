@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import "@fontsource-variable/bricolage-grotesque";
 import "@fontsource-variable/inter";
 import "@fontsource-variable/jetbrains-mono";
@@ -10,12 +10,17 @@ import "./motion/motion.css";
 import Layout from "./components/Layout.jsx";
 
 // Every HTML entry calls this with its page id (used for the active nav item).
+// Built pages arrive pre-rendered (scripts/prerender.mjs), so React hydrates
+// the existing markup; the dev server starts empty and renders from scratch.
 export function mount(page, Page) {
-  ReactDOM.createRoot(document.getElementById("root")).render(
+  const root = document.getElementById("root");
+  const app = (
     <React.StrictMode>
       <Layout page={page}>
         <Page />
       </Layout>
-    </React.StrictMode>,
+    </React.StrictMode>
   );
+  if (root.hasChildNodes()) hydrateRoot(root, app);
+  else createRoot(root).render(app);
 }

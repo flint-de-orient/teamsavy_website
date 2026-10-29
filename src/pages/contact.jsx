@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { ArrowRight, Building2, Mail, Send } from "lucide-react";
 import { mount } from "../mount.jsx";
+import JsonLd from "../components/JsonLd.jsx";
+import { faqPage, innerPage } from "../seo.js";
 import PageHero from "../components/PageHero.jsx";
 import PlayBadge from "../components/PlayBadge.jsx";
 import Spotlight from "../motion/Spotlight.jsx";
 import Faq from "../sections/Faq.jsx";
-import { COMPANY, contactOptions, LOGIN_URL, SUPPORT_EMAIL } from "../data.js";
+import { COMPANY, contactOptions, faqs, LOGIN_URL, SUPPORT_EMAIL } from "../data.js";
 import "./pages.css";
 
 const sizes = ["1–20", "21–50", "51–200", "201–500", "500+"];
@@ -112,9 +114,10 @@ function ContactForm() {
   );
 }
 
-function ContactPage() {
+export default function ContactPage() {
   return (
     <>
+      <JsonLd data={innerPage("/contact/", "Contact", faqPage(faqs))} />
       <PageHero
         eyebrow={<span className="hero-pill plain">Contact</span>}
         segments={[{ text: "Talk to the" }, { text: "TeamSavy team.", className: "grad-text" }]}
@@ -182,4 +185,4 @@ function ContactPage() {
   );
 }
 
-mount("contact", ContactPage);
+if (!import.meta.env.SSR) mount("contact", ContactPage);

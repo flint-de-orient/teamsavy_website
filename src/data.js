@@ -38,10 +38,21 @@ export const COMPANY = "Flint De Orient Marketing & Technology Pvt. Ltd.";
 
 export const nav = [
   { id: "features", label: "Features", href: "/features/" },
+  { id: "ai", label: "AI", href: "/ai-hr-software/" },
   { id: "whatsapp", label: "WhatsApp", href: "/whatsapp/" },
   { id: "payroll", label: "Payroll", href: "/payroll/" },
   { id: "mobile-app", label: "Mobile app", href: "/mobile-app/" },
   { id: "contact", label: "Contact", href: "/contact/" },
+];
+
+// Keyword landing pages (footer "Solutions" column and in-page links)
+export const solutionsNav = [
+  { id: "ai", label: "AI HR software", href: "/ai-hr-software/" },
+  { id: "attendance", label: "Attendance management", href: "/attendance-management-software/" },
+  { id: "leave", label: "Leave management", href: "/leave-management-software/" },
+  { id: "recruitment", label: "Recruitment software", href: "/recruitment-software/" },
+  { id: "payroll", label: "Payroll software", href: "/payroll/" },
+  { id: "whatsapp", label: "WhatsApp HR", href: "/whatsapp/" },
 ];
 
 export const legalNav = [
@@ -436,5 +447,41 @@ export const faqs = [
   {
     q: "How do we get started?",
     a: `Sign up at app.teamsavy.com to set up your company, or write to ${SUPPORT_EMAIL} and we will walk you through it and help you pick the plan that fits your team.`,
+  },
+];
+
+export const payrollFaqs = [
+  faqs[2],
+  {
+    q: "Does TeamSavy compare the old and new tax regimes?",
+    a: "Yes. Employees declare their investments, insurance and rent, see their tax under both regimes side by side, and TDS is deducted on the regime they choose.",
+  },
+  {
+    q: "Can TeamSavy create salary transfer files for our bank?",
+    a: "Yes. Bank transfer files are generated in your bank's template from the locked payroll run, and approved expense claims can be paid out through Cashfree.",
+  },
+  {
+    q: "How do employees get their payslips?",
+    a: "Each payslip goes to the employee on WhatsApp when the run is locked, and every month's payslip stays in the Android app and on the web with a Download PDF button.",
+  },
+];
+
+// Home page FAQ: written as direct answers, the way people (and AI
+// assistants) ask about HR software.
+export const homeFaqs = [
+  {
+    q: "What is TeamSavy?",
+    a: "TeamSavy is AI-powered HR management software for Indian businesses. It covers recruitment, appointment letters, onboarding, attendance, leave, payroll with PF, ESI, Professional Tax and TDS, expenses, tasks and KPIs, and delivers payslips, approvals and office orders to employees on WhatsApp. It runs in the browser at app.teamsavy.com and as an Android app.",
+  },
+  {
+    q: "Is TeamSavy AI-powered HR software?",
+    a: "Yes. TeamSavy uses Google Gemini to read résumés, Aadhaar, PAN, bank statements and certificates, to score candidates against a job, to generate MCQ exam questions and to draft circulars, notices and office orders. The AI fills in and suggests; your team checks and decides.",
+  },
+  faqs[2],
+  faqs[3],
+  faqs[0],
+  {
+    q: "Who makes TeamSavy?",
+    a: `TeamSavy is a product of ${COMPANY}, an Indian company. Support is at ${SUPPORT_EMAIL}.`,
   },
 ];

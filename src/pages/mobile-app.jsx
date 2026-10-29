@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
 import { Check, MapPin, ScanFace, Smartphone } from "lucide-react";
 import { mount } from "../mount.jsx";
+import JsonLd from "../components/JsonLd.jsx";
+import { innerPage, mobileApp } from "../seo.js";
 import PageHero from "../components/PageHero.jsx";
 import PlayBadge from "../components/PlayBadge.jsx";
 import { DashboardScreen, PayslipScreen, PunchScreen, ScreenshotPhone } from "../components/AppScreens.jsx";
@@ -52,9 +54,10 @@ function Fan() {
   );
 }
 
-function MobileAppPage() {
+export default function MobileAppPage() {
   return (
     <>
+      <JsonLd data={innerPage("/mobile-app/", "Mobile app", mobileApp)} />
       <PageHero
         className="app-hero"
         eyebrow={
@@ -147,4 +150,4 @@ function MobileAppPage() {
   );
 }
 
-mount("mobile-app", MobileAppPage);
+if (!import.meta.env.SSR) mount("mobile-app", MobileAppPage);

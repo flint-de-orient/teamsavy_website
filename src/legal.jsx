@@ -1,17 +1,20 @@
-// Legal pages, carried over word for word from the previous teamsavy.com
+// Legal pages, carried over from the previous teamsavy.com
 // (privacy-policy.html, terms-of-service.html, data-deletion.html). Their URLs
 // are referenced by the Play Store listing and Meta's WhatsApp app review, so
-// change the wording only on purpose.
+// change the wording only on purpose, and update that document's `effective`.
+// 2026-10-29: privacy policy now lists the uploaded documents TeamSavy reads
+// (résumés, Aadhaar, PAN, bank statements, certificates) and Google Gemini as
+// the AI service that reads them.
 import { COMPANY, SUPPORT_EMAIL } from "./data.js";
 
 const Mail = () => <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>;
 const PrivacyLink = () => <a href="/privacy-policy.html">Privacy Policy</a>;
 
-export const EFFECTIVE_DATE = "August 16, 2026";
 
 export const docs = {
   privacy: {
     title: "Privacy Policy",
+    effective: "October 29, 2026",
     body: (
       <>
         <p>
@@ -61,8 +64,10 @@ export const docs = {
             face-matching is performed by a third-party verification provider (see Section 4).
           </li>
           <li>
-            <b>Uploaded documents</b> — medical certificates, fitness certificates, and similar attachments a tenant's
-            employees submit in connection with a leave application.
+            <b>Uploaded documents</b> — résumés submitted by job candidates; joining documents submitted by new
+            employees, such as Aadhaar and PAN cards, bank statements and qualification certificates; and medical
+            certificates, fitness certificates, and similar attachments a tenant's employees submit in connection with
+            a leave application.
           </li>
           <li>
             <b>WhatsApp messaging data</b> — where a tenant enables WhatsApp notifications, we send pre-approved message
@@ -92,6 +97,12 @@ export const docs = {
             photo) and to flag, for HR review, a check-in that falls outside an employee's assigned work location.
           </li>
           <li>
+            To read details from uploaded résumés and documents with an AI service, so HR users do not have to retype
+            them, and, where a tenant uses these features, to suggest a match score for a candidate against a job,
+            generate exam questions, and draft notices and ID card designs. These AI results are shown to the tenant's
+            HR users to review.
+          </li>
+          <li>
             To maintain the security, integrity, and availability of the platform, including detecting and preventing
             abuse.
           </li>
@@ -117,6 +128,11 @@ export const docs = {
           <li>
             A third-party face-verification API, to compare a mobile check-in selfie against an employee's enrollment
             photo and return a match result.
+          </li>
+          <li>
+            Google's Gemini AI service, to read the text of the uploaded résumés and documents described in Section 2
+            and return the extracted details, and to generate the candidate match scores, exam questions, notice
+            drafts, and ID card designs described in Section 3.
           </li>
           <li>
             Email delivery (SMTP) providers, configured per tenant or by us on a tenant's behalf, to send offer letters,
@@ -177,6 +193,7 @@ export const docs = {
 
   terms: {
     title: "Terms of Service",
+    effective: "August 16, 2026",
     body: (
       <>
         <p>
@@ -290,6 +307,7 @@ export const docs = {
 
   deletion: {
     title: "Data Deletion",
+    effective: "August 16, 2026",
     body: (
       <>
         <p>

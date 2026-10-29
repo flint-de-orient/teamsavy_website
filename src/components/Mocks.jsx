@@ -14,7 +14,9 @@ import {
   Paperclip,
   ScanFace,
   Smartphone,
+  Sparkles,
 } from "lucide-react";
+import { motion } from "motion/react";
 import "./Mocks.css";
 
 function MockHead({ trail, current, chip }) {
@@ -330,7 +332,57 @@ function PayrollMock() {
   );
 }
 
+const draftLines = [
+  "Circular No. CIR/2026/052 · 29 October 2026",
+  "Subject: Holiday list for the calendar year 2027",
+  "All employees are informed that the list of holidays for 2027 has been approved and is attached to this circular. Holidays falling on a weekly off will not be substituted.",
+  "Leave applications around these dates should reach your reporting manager at least seven days in advance.",
+];
+
+function AiMock() {
+  return (
+    <div className="mock" role="img" aria-label="Example: AI drafting a holiday-list circular from a one-line topic">
+      <MockHead trail="Notices" current="New circular" chip={<Chip tone="brand">Drafted by AI</Chip>} />
+      <div className="ai-topic">
+        <Sparkles aria-hidden />
+        <span>
+          <small>Topic</small>
+          Holiday list for 2027, apply for leave a week ahead
+        </span>
+      </div>
+      <motion.div
+        className="ai-draft"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.35, delayChildren: 0.2 } } }}
+      >
+        {draftLines.map((line, i) => (
+          <motion.p
+            key={i}
+            className={i < 2 ? "ai-draft-meta" : undefined}
+            variants={{
+              hidden: { opacity: 0, y: 8, filter: "blur(6px)" },
+              show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6 } },
+            }}
+          >
+            {line}
+          </motion.p>
+        ))}
+      </motion.div>
+      <div className="pay-foot">
+        <span>Uses your company details and leave policy</span>
+        <span className="mini-actions">
+          <span className="mini-btn mini-btn-secondary">Edit</span>
+          <span className="mini-btn mini-btn-primary">Publish</span>
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export const mocks = {
+  ai: AiMock,
   hire: HireMock,
   appoint: AppointMock,
   onboard: OnboardMock,

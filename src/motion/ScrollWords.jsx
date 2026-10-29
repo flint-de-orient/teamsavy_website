@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 // A paragraph whose words light up as it scrolls through the viewport.
@@ -7,9 +7,13 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 export default function ScrollWords({ segments, className }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
+  // Switch to the static version only after hydration, so it matches the
+  // pre-rendered (animated) markup first.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "end 0.35"] });
 
-  if (reduce) {
+  if (reduce && mounted) {
     return (
       <p className={className}>
         {segments.map((seg, si) => (

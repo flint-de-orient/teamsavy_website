@@ -103,8 +103,9 @@ export default function HomeHero() {
           segments={[{ text: "Your HR, delivered" }, { text: "on WhatsApp.", className: "grad-text" }]}
         />
         <motion.p className="home-lede" {...rise(0.6)}>
-          TeamSavy runs the whole employee lifecycle, from appointment letters and attendance to leave and payroll, and
-          sends every payslip, approval and office order straight to your team's WhatsApp.
+          TeamSavy is AI-powered HR management software for Indian businesses. It runs the whole employee lifecycle,
+          from hiring and attendance to leave and payroll, and sends every payslip, approval and office order to your
+          team's WhatsApp.
         </motion.p>
         <motion.div className="home-actions" {...rise(0.72)}>
           <Magnetic>

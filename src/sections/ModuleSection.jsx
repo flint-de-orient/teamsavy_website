@@ -1,8 +1,15 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { mocks } from "../components/Mocks.jsx";
 import "./ModuleSection.css";
+
+const deeper = {
+  hire: ["More on recruitment software", "/recruitment-software/"],
+  attendance: ["More on attendance management", "/attendance-management-software/"],
+  leave: ["More on leave management", "/leave-management-software/"],
+  payroll: ["More on payroll software", "/payroll/"],
+};
 
 // One lifecycle module on the Features page: copy on one side, its screen on
 // an accent-lit stage on the other. The screen drifts against the scroll.
@@ -34,6 +41,12 @@ export default function ModuleSection({ module: m, index }) {
               </li>
             ))}
           </ul>
+          {deeper[m.id] && (
+            <a className="link-arrow module-more" href={deeper[m.id][1]}>
+              {deeper[m.id][0]}
+              <ArrowRight aria-hidden />
+            </a>
+          )}
         </div>
         <div className="module-stage" data-reveal style={{ "--d": "120ms" }}>
           <motion.div style={{ y, rotate }}>

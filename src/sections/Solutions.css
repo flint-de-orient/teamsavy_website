@@ -1,0 +1,57 @@
+.solutions,
+.related {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.solutions > li > a,
+.related > li > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--s-6);
+}
+
+.solutions h3,
+.related h3 {
+  margin-top: var(--s-5);
+  font-size: var(--fs-20);
+  letter-spacing: -0.02em;
+}
+
+.related h3 {
+  margin-top: 0;
+}
+
+.solutions p,
+.related p {
+  flex: 1;
+  margin-top: var(--s-2);
+  font-size: var(--fs-16);
+  color: var(--text-2);
+}
+
+.solutions .link-arrow,
+.related .link-arrow {
+  margin-top: var(--s-5);
+}
+
+@media (max-width: 1000px) {
+  .solutions,
+  .related {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .solutions,
+  .related {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .solutions > li > a,
+  .related > li > a {
+    padding: var(--s-5);
+  }
+}

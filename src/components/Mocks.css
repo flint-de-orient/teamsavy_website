@@ -615,3 +615,51 @@
 .mock .pay-summary .is-net dt {
   color: rgba(255, 255, 255, 0.75);
 }
+
+/* AI drafting */
+.ai-topic {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-3);
+  padding: 12px 14px;
+  border: 1px solid rgba(155, 92, 255, 0.45);
+  border-radius: var(--r-md);
+  background: rgba(155, 92, 255, 0.1);
+}
+
+.ai-topic svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  color: #c4b5ff;
+}
+
+.ai-topic span {
+  display: flex;
+  flex-direction: column;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ai-topic small {
+  font-size: var(--fs-12);
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.ai-draft {
+  display: grid;
+  gap: 8px;
+  padding: var(--s-4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+  color: var(--text-2);
+  line-height: 1.55;
+}
+
+.ai-draft-meta {
+  font-weight: 700;
+  color: var(--ink);
+}

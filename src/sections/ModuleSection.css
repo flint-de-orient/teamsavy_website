@@ -69,6 +69,10 @@
   stroke-width: 2.5;
 }
 
+.module-more {
+  margin-top: var(--s-6);
+}
+
 .module-stage {
   position: relative;
   padding: var(--s-8) var(--s-7);

@@ -1,5 +1,70 @@
 /* Page-specific layouts. Shared sections carry their own CSS. */
 
+/* Keyword pages: the direct answer block */
+.answer {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s-8);
+  align-items: start;
+}
+
+.answer h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+}
+
+.answer-text {
+  padding-left: var(--s-6);
+  border-left: 2px solid var(--accent, var(--lavender));
+  font-size: var(--fs-20);
+  line-height: 1.7;
+  color: var(--text-2);
+}
+
+@media (max-width: 900px) {
+  .answer {
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+  }
+  .answer-text {
+    padding-left: var(--s-5);
+    font-size: var(--fs-17);
+  }
+}
+
+/* 404 */
+.nf-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  margin-top: var(--s-7);
+}
+
+.nf-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 44px;
+  padding-inline: 18px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: var(--fs-14);
+  transition:
+    background-color 200ms var(--ease-out),
+    border-color 200ms var(--ease-out);
+}
+
+.nf-links a:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nf-links svg {
+  width: 15px;
+  height: 15px;
+  color: var(--text-3);
+}
+
 /* Glow behind hero visuals */
 .visual-glow {
   position: absolute;

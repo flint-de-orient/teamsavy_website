@@ -5,13 +5,14 @@ import { lifecycle } from "../data.js";
 import { mocks } from "../components/Mocks.jsx";
 import "./StickyModules.css";
 
-const exploreLabel = {
-  hire: "Explore hiring",
-  appoint: "Explore appointment letters",
-  onboard: "Explore onboarding",
-  attendance: "Explore attendance",
-  leave: "Explore leave",
-  payroll: "Explore payroll",
+// Where each module's "explore" link goes: its keyword page if it has one
+const explore = {
+  hire: ["Explore recruitment software", "/recruitment-software/"],
+  appoint: ["Explore appointment letters", "/features/#appoint"],
+  onboard: ["Explore onboarding", "/features/#onboard"],
+  attendance: ["Explore attendance management", "/attendance-management-software/"],
+  leave: ["Explore leave management", "/leave-management-software/"],
+  payroll: ["Explore payroll software", "/payroll/"],
 };
 
 // Scroll-driven product tour: module copy scrolls on the left while a pinned
@@ -75,8 +76,8 @@ export default function StickyModules() {
                       </li>
                     ))}
                   </ul>
-                  <a className="link-arrow" href={`/features/#${mod.id}`}>
-                    {exploreLabel[mod.id]}
+                  <a className="link-arrow" href={explore[mod.id][1]}>
+                    {explore[mod.id][0]}
                     <ArrowRight aria-hidden />
                   </a>
                   <div className="sm-inline-mock">

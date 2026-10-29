@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { mount } from "../mount.jsx";
+import JsonLd from "../components/JsonLd.jsx";
+import { innerPage, software } from "../seo.js";
 import PageHero from "../components/PageHero.jsx";
 import Magnetic from "../motion/Magnetic.jsx";
 import ModuleSection from "../sections/ModuleSection.jsx";
@@ -9,9 +11,10 @@ import Cta from "../sections/Cta.jsx";
 import { extras, lifecycle, SIGNUP_URL } from "../data.js";
 import "./pages.css";
 
-function Features() {
+export default function Features() {
   return (
     <>
+      <JsonLd data={innerPage("/features/", "Features", software)} />
       <PageHero
         eyebrow={<span className="hero-pill plain">Features</span>}
         segments={[{ text: "Everything HR," }, { text: "in one place.", className: "grad-text" }]}
@@ -51,4 +54,4 @@ function Features() {
   );
 }
 
-mount("features", Features);
+if (!import.meta.env.SSR) mount("features", Features);
