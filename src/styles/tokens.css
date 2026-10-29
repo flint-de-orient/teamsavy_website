@@ -1,0 +1,113 @@
+/*
+ * TeamSavy — dark & cinematic.
+ * Near-black navy base, the logo's blue→violet as light (glows, gradients),
+ * module accents from the product's palette lifted for dark backgrounds.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces, darkest → lightest */
+  --bg: #05060f;
+  --bg-2: #070918;
+  --surface: #0b0d1d;
+  --surface-2: #111429;
+  --surface-3: #181c38;
+  --glass: rgba(14, 17, 38, 0.62);
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.15);
+
+  /* Text */
+  --text: #f3f4fb;
+  --text-2: rgba(226, 229, 250, 0.7);
+  --text-3: rgba(226, 229, 250, 0.5);
+
+  /* Brand light */
+  --blue: #4d7cff;
+  --violet: #9b5cff;
+  --lavender: #c4b5ff;
+  --grad: linear-gradient(100deg, #4d7cff 0%, #9b5cff 100%);
+  --grad-text: linear-gradient(92deg, #a9c2ff 0%, #d4c4ff 50%, #ffcfba 100%);
+  --glow-blue: rgba(77, 124, 255, 0.45);
+  --glow-violet: rgba(155, 92, 255, 0.42);
+
+  /* Semantic */
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --wa: #25d366;
+
+  /* WhatsApp's own palette, used only inside the chat phone */
+  --wa-wall: #efe7de;
+  --wa-bubble: #ffffff;
+  --wa-header: #f7f8fa;
+  --wa-link: #0b72d8;
+  --wa-green: #1daa61;
+
+  /* Type */
+  --font-display: "Bricolage Grotesque Variable", "Segoe UI", system-ui, sans-serif;
+  --font-text: "Inter Variable", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+  --font-app: "Urbanist Variable", "Segoe UI", system-ui, sans-serif;
+
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-17: 1.0625rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-h2: clamp(2rem, 4.2vw, 3.25rem);
+  --fs-h1: clamp(2.75rem, 7.2vw, 5.75rem);
+
+  /* Space (4px base) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 140px;
+
+  /* Shape: pills for controls, 20px for cards, 32px for stages */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+
+  --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 30px 80px -20px rgba(77, 124, 255, 0.35);
+  --shadow-deep: 0 40px 100px -30px rgba(0, 0, 0, 0.85);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --header-h: 76px;
+  --container: 1200px;
+  --gutter: 24px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 68px;
+    --s-10: 104px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gutter: 16px;
+  }
+}
+
+/* Module accents: one class sets them for anything inside */
+.accent-violet { --accent: #a78bfa; --accent-rgb: 167, 139, 250; }
+.accent-blue { --accent: #60a5fa; --accent-rgb: 96, 165, 250; }
+.accent-pink { --accent: #f472b6; --accent-rgb: 244, 114, 182; }
+.accent-mint { --accent: #34d399; --accent-rgb: 52, 211, 153; }
+.accent-yellow { --accent: #fbbf24; --accent-rgb: 251, 191, 36; }
+.accent-brand { --accent: #7c9cff; --accent-rgb: 124, 156, 255; }
+.accent-wa { --accent: #25d366; --accent-rgb: 37, 211, 102; }
+
+[class*="accent-"] {
+  --accent-tint: rgba(var(--accent-rgb), 0.12);
+  --accent-line: rgba(var(--accent-rgb), 0.35);
+}

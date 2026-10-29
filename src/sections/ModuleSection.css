@@ -1,0 +1,122 @@
+.module {
+  padding-block: var(--s-9);
+}
+
+.module + .module {
+  border-top: 1px solid var(--line);
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--s-8);
+  align-items: center;
+}
+
+.module.is-flipped .module-copy {
+  order: 2;
+}
+
+.module.is-flipped .module-grid {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.module-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.module-eyebrow .icon-tile {
+  width: 40px;
+  height: 40px;
+}
+
+.module h2 {
+  margin-top: var(--s-5);
+  font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+  letter-spacing: -0.035em;
+}
+
+.module-copy > p {
+  margin-top: var(--s-4);
+  max-width: 48ch;
+  color: var(--text-2);
+}
+
+.module-copy ul {
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-5);
+}
+
+.module-copy li {
+  display: flex;
+  gap: var(--s-3);
+}
+
+.module-copy li svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 4px;
+  color: var(--accent);
+  stroke-width: 2.5;
+}
+
+.module-stage {
+  position: relative;
+  padding: var(--s-8) var(--s-7);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(70% 70% at 80% 0%, rgba(var(--accent-rgb), 0.24), transparent 65%),
+    radial-gradient(60% 60% at 0% 100%, rgba(77, 124, 255, 0.12), transparent 65%),
+    var(--surface);
+  overflow: hidden;
+}
+
+.module-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 40%, #000, transparent 75%);
+}
+
+.module-stage > div {
+  position: relative;
+}
+
+@media (max-width: 1000px) {
+  .module-grid,
+  .module.is-flipped .module-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-6);
+  }
+  .module.is-flipped .module-copy {
+    order: 0;
+  }
+  .module-stage {
+    padding: var(--s-6) var(--s-5);
+  }
+}
+
+@media (max-width: 560px) {
+  .module {
+    padding-block: var(--s-8);
+  }
+  .module-stage {
+    margin-inline: calc(var(--gutter) * -1 + 4px);
+    padding: var(--s-5) 10px;
+  }
+}

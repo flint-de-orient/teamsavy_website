@@ -1,0 +1,82 @@
+.cta-wrap {
+  padding-block: var(--s-8);
+}
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--s-10) var(--s-6) var(--s-9);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: var(--surface);
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta .aurora::after {
+  display: none;
+}
+
+.cta-mark-wrap {
+  margin-bottom: var(--s-6);
+}
+
+.cta-mark {
+  width: 96px;
+  height: auto;
+  color: #fff;
+  filter: drop-shadow(0 0 24px rgba(160, 175, 255, 0.85)) drop-shadow(0 0 60px rgba(155, 92, 255, 0.6));
+}
+
+.cta h2 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  letter-spacing: -0.045em;
+}
+
+.cta p {
+  max-width: 46ch;
+  margin-top: var(--s-5);
+  font-size: var(--fs-20);
+  color: var(--text-2);
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-7);
+}
+
+.cta-login {
+  margin-top: var(--s-5);
+  font-size: var(--fs-14);
+  color: var(--text-2);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+  text-underline-offset: 4px;
+  transition: color 200ms var(--ease-out);
+}
+
+.cta-login:hover {
+  color: var(--text);
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 560px) {
+  .cta {
+    padding: var(--s-9) var(--s-5) var(--s-8);
+  }
+  .cta p {
+    font-size: var(--fs-17);
+  }
+  .cta-actions,
+  .cta-actions .magnetic,
+  .cta-actions .magnetic .btn {
+    width: 100%;
+  }
+}

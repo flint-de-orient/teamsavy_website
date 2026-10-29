@@ -1,0 +1,37 @@
+.fcards {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr));
+  gap: 16px;
+}
+
+.fcards > li {
+  padding: var(--s-6);
+}
+
+.fcards h3 {
+  margin-top: var(--s-5);
+  font-size: var(--fs-20);
+  letter-spacing: -0.02em;
+}
+
+.fcards p {
+  margin-top: var(--s-2);
+  font-size: var(--fs-16);
+  color: var(--text-2);
+}
+
+@media (max-width: 1000px) {
+  .fcards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .fcards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .fcards > li {
+    padding: var(--s-5);
+  }
+}

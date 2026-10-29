@@ -1,0 +1,94 @@
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--s-8);
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(60% 80% at 50% 120%, rgba(155, 92, 255, 0.18), transparent 70%),
+    var(--bg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1fr;
+  gap: var(--s-6);
+}
+
+.footer-brand img {
+  height: 26px;
+  width: auto;
+}
+
+.footer-brand p {
+  margin: var(--s-3) 0 var(--s-5);
+  color: var(--text-2);
+}
+
+.footer-brand .play-badge {
+  display: inline-block;
+}
+
+.site-footer h2 {
+  margin-bottom: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.site-footer ul {
+  display: grid;
+  gap: 2px;
+}
+
+.site-footer li a {
+  display: inline-block;
+  padding-block: 5px;
+  font-size: var(--fs-16);
+  color: var(--text-2);
+  transition: color 200ms var(--ease-out);
+}
+
+.site-footer li a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-14);
+  color: var(--text-3);
+}
+
+/* Oversized wordmark that fades into the page edge */
+.footer-wordmark {
+  margin: var(--s-5) 0 -0.24em;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 19vw, 18rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-align: center;
+  white-space: nowrap;
+  background: linear-gradient(180deg, rgba(196, 181, 255, 0.55) 0%, rgba(77, 124, 255, 0.12) 55%, transparent 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+}
+
+@media (max-width: 860px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}

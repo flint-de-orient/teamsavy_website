@@ -1,0 +1,166 @@
+.app-band {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--s-6);
+  min-height: 600px;
+  padding: var(--s-8) var(--s-8) 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background:
+    radial-gradient(60% 80% at 85% 30%, rgba(155, 92, 255, 0.3), transparent 65%),
+    radial-gradient(50% 70% at 0% 100%, rgba(77, 124, 255, 0.22), transparent 65%),
+    var(--surface);
+  overflow: hidden;
+}
+
+.app-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 75% 50%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 70% at 75% 50%, #000, transparent 75%);
+}
+
+.app-band-copy {
+  align-self: center;
+  padding-bottom: var(--s-8);
+}
+
+.app-band h2 {
+  font-size: var(--fs-h2);
+}
+
+.app-band-copy > p {
+  margin-top: var(--s-5);
+  max-width: 46ch;
+  color: var(--text-2);
+}
+
+.app-band-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2) var(--s-5);
+  margin-top: var(--s-5);
+  font-size: var(--fs-16);
+}
+
+.app-band-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.app-band-list svg {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  color: var(--lavender);
+  stroke-width: 2.5;
+}
+
+.app-band-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+  margin-top: var(--s-6);
+}
+
+.app-band-qr {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  max-width: 190px;
+  font-size: var(--fs-14);
+  color: var(--text-2);
+}
+
+.app-band-qr img {
+  flex: none;
+  padding: 6px;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.app-band .link-arrow {
+  margin-top: var(--s-5);
+}
+
+.app-band-phones {
+  position: relative;
+  align-self: stretch;
+  min-height: 520px;
+}
+
+.band-slot {
+  position: absolute;
+  bottom: -40px;
+}
+
+.band-slot.back {
+  left: 4%;
+  rotate: -8deg;
+}
+
+.band-slot.back .phone {
+  zoom: 0.84;
+}
+
+.band-slot.front {
+  right: 4%;
+  rotate: 5deg;
+}
+
+.band-slot.front .phone {
+  zoom: 0.94;
+}
+
+@media (max-width: 1000px) {
+  .app-band {
+    grid-template-columns: 1fr;
+    padding: var(--s-7) var(--s-6) 0;
+  }
+  .app-band-copy {
+    padding-bottom: 0;
+  }
+  .app-band-phones {
+    min-height: 460px;
+    width: 100%;
+    max-width: 520px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-band {
+    padding: var(--s-6) var(--s-5) 0;
+  }
+  .app-band-list {
+    grid-template-columns: 1fr;
+  }
+  .app-band-qr {
+    display: none;
+  }
+  .app-band-phones {
+    min-height: 400px;
+  }
+  .band-slot.back {
+    left: -8%;
+  }
+  .band-slot.back .phone {
+    zoom: 0.66;
+  }
+  .band-slot.front {
+    right: -6%;
+  }
+  .band-slot.front .phone {
+    zoom: 0.76;
+  }
+}

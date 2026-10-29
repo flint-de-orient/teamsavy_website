@@ -1,0 +1,244 @@
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: calc(var(--header-h) + 88px);
+}
+
+.home-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home-title {
+  margin-top: var(--s-6);
+  font-size: var(--fs-h1);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  max-width: 12ch;
+}
+
+.home-lede {
+  max-width: 60ch;
+  margin-top: var(--s-6);
+  font-size: var(--fs-20);
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-7);
+}
+
+.home-facts {
+  justify-content: center;
+}
+
+/* Stage */
+.hero-stage {
+  position: relative;
+  height: 760px;
+  margin-top: var(--s-8);
+  perspective: 1400px;
+}
+
+.stage-inner {
+  position: relative;
+  height: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  transform-style: preserve-3d;
+  transform-origin: 50% 0%;
+}
+
+.stage-rings,
+.stage-glow {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.stage-rings {
+  width: 1000px;
+  height: 1000px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    radial-gradient(circle, transparent 33%, rgba(255, 255, 255, 0.07) 33.1%, transparent 33.3%),
+    radial-gradient(circle, transparent 49.8%, rgba(255, 255, 255, 0.05) 50%, transparent 50.2%);
+}
+
+.stage-glow {
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(110, 120, 255, 0.45) 0%, rgba(155, 92, 255, 0.18) 40%, transparent 68%);
+  filter: blur(10px);
+}
+
+.stage-phone {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -150px;
+  transform-style: preserve-3d;
+}
+
+.float-slot {
+  position: absolute;
+  z-index: 4;
+}
+
+.slot-tl {
+  left: calc(50% - 470px);
+  top: 90px;
+}
+
+.slot-bl {
+  left: calc(50% - 440px);
+  top: 380px;
+}
+
+.slot-tr {
+  left: calc(50% + 190px);
+  top: 140px;
+}
+
+.slot-br {
+  left: calc(50% + 210px);
+  top: 430px;
+}
+
+/* Small notification cards */
+.note-card {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 12px 16px 12px 12px;
+}
+
+.note-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: var(--accent-tint);
+  box-shadow: inset 0 0 0 1px var(--accent-line);
+  color: var(--accent);
+}
+
+.note-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.note-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+}
+
+.note-text b {
+  font-size: var(--fs-14);
+  font-weight: 600;
+}
+
+.note-text span {
+  font-size: var(--fs-12);
+  color: var(--text-3);
+}
+
+.note-tick {
+  width: 18px;
+  height: 18px;
+  margin-left: var(--s-2);
+  color: var(--success);
+  stroke-width: 3;
+}
+
+@media (max-width: 1100px) {
+  .slot-tl {
+    left: calc(50% - 400px);
+  }
+  .slot-bl {
+    left: calc(50% - 400px);
+  }
+  .slot-tr {
+    left: calc(50% + 160px);
+  }
+  .slot-br {
+    left: calc(50% + 170px);
+  }
+}
+
+@media (max-width: 860px) {
+  .slot-tr,
+  .slot-bl {
+    display: none;
+  }
+  .slot-tl {
+    left: calc(50% - 330px);
+    top: 120px;
+  }
+  .slot-br {
+    left: calc(50% + 110px);
+    top: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    padding-top: calc(var(--header-h) + 56px);
+  }
+  .home-title {
+    letter-spacing: -0.04em;
+  }
+  .home-lede {
+    font-size: var(--fs-17);
+  }
+  .home-actions {
+    width: 100%;
+  }
+  .home-actions .magnetic,
+  .home-actions .magnetic .btn {
+    width: 100%;
+  }
+  .home-facts {
+    align-items: flex-start;
+  }
+  .hero-stage {
+    height: 600px;
+    margin-top: var(--s-7);
+  }
+  .stage-phone {
+    zoom: 0.88;
+    margin-left: -150px;
+  }
+  .stage-rings {
+    width: 700px;
+    height: 700px;
+  }
+  .stage-glow {
+    width: 420px;
+    height: 420px;
+  }
+  .slot-tl {
+    left: auto;
+    right: 4px;
+    top: 26px;
+  }
+  .slot-br {
+    left: 8px;
+    top: 552px;
+  }
+}

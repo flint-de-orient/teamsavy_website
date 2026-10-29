@@ -1,0 +1,40 @@
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.role-card {
+  padding: var(--s-6);
+}
+
+.role-num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: 0.12em;
+  color: var(--lavender);
+}
+
+.role-card h3 {
+  margin-top: var(--s-6);
+  font-size: var(--fs-20);
+  letter-spacing: -0.02em;
+}
+
+.role-card p {
+  margin-top: var(--s-3);
+  font-size: var(--fs-16);
+  color: var(--text-2);
+}
+
+@media (max-width: 960px) {
+  .roles-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+}
